@@ -1,0 +1,120 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "roomNum",
+						"type": "uint256"
+					}
+				],
+				"name": "checkTotalPay",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "roomNumPay",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum RPS.Hand",
+						"name": "_hand",
+						"type": "uint8"
+					}
+				],
+				"name": "createRoom",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "roomNum",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "roomNum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum RPS.Hand",
+						"name": "_hand",
+						"type": "uint8"
+					}
+				],
+				"name": "joinRoom",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "roomNum",
+						"type": "uint256"
+					}
+				],
+				"name": "payout",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"remixd_practice/game.sol": "RPS"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"remixd_practice/game.sol": {
+			"keccak256": "0xb789c3ba1df76b1b4d31c6c9df481788e8f649ae4d41395137f44f9001165547",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://223d30af1903ce25e0c6d47e60bd08bc1066e8d9e6c317c6339970ea2115f27b",
+				"dweb:/ipfs/QmXbpbatR7dAi5wrqcM96cAUZeKCPC47HnUxiKK44q2ytQ"
+			]
+		}
+	},
+	"version": 1
+}
