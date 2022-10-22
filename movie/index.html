@@ -1,32 +1,12 @@
 
-<!--  일반적인 자바스크립트에서 웹사이트 만드는 방법  
-    1. html 
-    2. JS 에서 button 가져옴
-    3. button.addEventListener 로 click event 감지 
-    4. click 에 대응하는 function 생성
--->
+<!-- html을 react로 바꾸기 위해서는 React, React-dom이 필요함 
+    react, react-dom import 해와서 쓰기 -->
 
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 <body>
-        <span> Total clicks: 0 </span>
-    <button id="btn"> click me </button>
-
+    
 </body>
-<script>
-    let counter = 0;
-    const button = document.getElementById("btn");
-    const span = document.querySelector("span"); // html -> JS 가져와야 페이지에 반영(=동작함)
-    function handleClick(){
-        counter = counter + 1;
-        span.innerText = `Total clicks: ${counter}`;
-    }
-    button.addEventListener("click", handleClick);
-</script>
+<scirpt src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
 </html>
