@@ -16,11 +16,5 @@
 // input: ['🍌', '🥝', '🍇'],  ['🍌', '🍓', '🍇', '🍓']
 // output: [ '🍌', '🍇' ]
 
-const arr1 = ['🍌', '🥝', '🍇']
-const arr2 = ['🍌', '🍓', '🍇', '🍓']
 
-const sumArr = arr1.concat(arr2);
 
-console.log(sumArr);
-
-sumArr.sort();
