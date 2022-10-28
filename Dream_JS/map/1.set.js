@@ -29,7 +29,6 @@ console.log(set);
 set.clear();
 console.log(set);
 
-
 // 오브젝트 세트
 const obj1 = { name: '🍎', price: 8 };
 const obj2 = { name: '🍌', price: 5 };
@@ -37,7 +36,7 @@ const objs = new Set([obj1, obj2]);
 console.log(objs);
 
 // 퀴즈
-obj1.price = 10; //shallow copy
+obj1.price = 10;
 objs.add(obj1);
 console.log(objs);
 
