@@ -1,16 +1,15 @@
-# 코딩 애플 강의 실습 목록
-1. HTML / CSS
-2. A_javaScript -> 자바스크립트
-3. A_React -> 리액트
+# 공부한 것들 기록함
+A 코딩
+1. HTML(CSS)
 
-# 1분 코딩 자바스크립트 쌩초보 
-ilbun
+1분 코딩 자바스크립트 쌩초보 
+1. ilbun
 
-# 드림코딩 자바스크립트 
+D 코딩  
 1. Dream_JS
+2. Node.JS
 
-# Algorithm 
-1. 코플릿 TOY 
+Algorithm 
 
-# solidity 
-솔리디티 깨부수기 강의 노트 
+solidity 
+1. 솔리디티 깨부수기 강의 노트 
