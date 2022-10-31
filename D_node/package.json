@@ -1,5 +1,16 @@
 {
   "dependencies": {
     "node": "^19.0.0"
-  }
+  },
+  "name": "d_node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node chap4/"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
