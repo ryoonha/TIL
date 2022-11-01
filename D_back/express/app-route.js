@@ -1,11 +1,16 @@
 import express from "express";
-import postRouter from "./router/post.js";
-import userRouter from "./router/users.js";
+import cors from "cors";
 
 const app = express();
 
-app.use(express.json()); // application은 express.json 사용
-app.use("/posts", postRouter); // 처리하는 routes에 post라는 경로 있구나, 그 이하의 관련 아이들은 postRouter에 가면 되는구나!
-app.use("/users", userRouter); // 도메인 크게 posts, users 두 개
+app.use(
+  cors({
+    origin: ["http://127.0.0.1:5500"], // 항상 여기서만 데이터 볼 수 있도록, 서버가 설정
+  })
+);
+
+app.get("/", (req, res) => {
+  res.send("Welcome!");
+});
 
 app.listen(8080);
