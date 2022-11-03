@@ -17,22 +17,19 @@
   <script>
     const root = document.getElementById("root");
 
-    let counter = 0;
-    function countUp() {
-      counter = counter + 1;
-      render(); // 클릭할 때마다 count 세는 것 렌더링되도록
+    function App() {
+      const [counter, setCounter] = React.useState();
+      const onClick = () => {
+        // setCounter(counter + 1);
+        setCounter((current) => current + 1); // 현재값 current,
+      };
+      return (
+        <div>
+          <h3> Total clicks: {counter} </h3>
+          <button onClick={onClick}> Click me </button>
+        </div>
+      );
     }
-
-    function render() {
-      ReactDOM.render(<Container />, root);
-    }
-
-    const Container = () => {
-      <div>
-        <h3> Total click : {counter} </h3>
-        <button onClick={countUp}> Click me </button>
-      </div>;
-    };
-    render(); // 처음 페이지 열었을 때 렌더, count 0
+    ReactDOM.render(<App />, root); // UI, 렌더링 한번으로 끝남
   </script>
 </html>
