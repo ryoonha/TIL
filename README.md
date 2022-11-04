@@ -1,15 +1,19 @@
-# 공부한 것들 기록함
-A 코딩
-1. HTML, CSS: HTML
+# 배운 언어 강의 목록
 
-1분 코딩 자바스크립트 쌩초보 
-1. ilbun
+<h3> 강의명: 폴더명 </h3>
 
-D 코딩  
-1. javaScript: Dream_JS
-2. Node.JS: D_node
+javaScript
 
-Algorithm 
+1. 꿈코딩: Dream_JS
 
-solidity 
-1. 솔리디티 깨부수기 강의 노트 
+React
+
+1. 노마드: nomad-react
+
+Solidity
+
+1. 솔리디티 깨부수기: solidity
+
+Node.JS
+
+1. 꿈코딩: D_back
