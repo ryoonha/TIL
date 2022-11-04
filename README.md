@@ -12,8 +12,12 @@ React
 
 Solidity
 
-1. 솔리디티 깨부수기: solidity
+1. 솔리디티 깨부수기: lecture-solidity
 
 Node.JS
 
 1. 꿈코딩: D_back
+
+HTML/CSS
+
+1. 사과코딩: apple-html
