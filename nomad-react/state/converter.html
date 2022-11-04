@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function App() {
+        const [amount, setAmount] = React.useState(0);
+        const [flipped, setFlipped] = React.useState(false);
+        const onChange = (evnet) => {
+          setAmount(event.target.value); // 변화란, 사용자가 input에 입력하는 것
+        };
+        const reset = () => setAmount(0);
+        const onFlip = () => {
+          reset();
+          setFlipped((current) => !current);
+        };
+
+        return (
+          <div>
+            <h1> Super Converter </h1>
+            <div>
+              <lable htmlFor="amount">Minutes</lable>
+              <input
+                value={flipped ? amount * 60 : amount} // controlled input
+                id="amount"
+                placeholder="amount"
+                type="number"
+                onChange={onChange} // update input
+                disabled={flipped}
+              />
+            </div>
+            <div>
+              <lable htmlFor="hours"> Hours </lable>
+              <input
+                value={flipped ? amount : Math.round(amount / 60)}
+                id="hours"
+                placeholder="Hours"
+                type="number"
+                onChange={onChange}
+                disabled={!flipped} // 입력상태, flipped이 false-> disabled, 버튼 누르면 true->hour입력가능
+              />
+            </div>
+            <button onclick={reset}> Reset </button>
+            <button onclick={onFlip}> Filp </button>
+          </div>
+        );
+      }
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+
+      root.render(<App />);
+    </script>
+  </body>
+</html>

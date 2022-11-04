@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!-- open live server -> 콘솔창에 react 입력했을 때 객체 불려와지면, react cdn 설치 성공 -->
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+
+  <script>
+    const root = document.getElementById("root");
+
+    function App() {
+      const [counter, setCounter] = React.useState();
+      const onClick = () => {
+        // setCounter(counter + 1);
+        setCounter((current) => current + 1); // 현재값 current,
+      };
+      return (
+        <div>
+          <h3> Total clicks: {counter} </h3>
+          <button onClick={onClick}> Click me </button>
+        </div>
+      );
+    }
+    ReactDOM.render(<App />, root); // UI, 렌더링 한번으로 끝남
+  </script>
+</html>

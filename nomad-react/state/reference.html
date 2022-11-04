@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@17/umd/react.production.min.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    /* 메인 클래스에서 모든 것을 적는게 아닌 분할 & 정복을 통해 각 기능을 여러 컴포넌트에서 작성후
+        메인 클래스, 즉 App()에서 다른 컴포넌트들을 렌더링해줌.*/
+    function MinutesToHours() {
+      // -------- State --------
+      const [amount, setAmount] = React.useState(0);
+      const [inverted, setInverted] = React.useState(false);
+
+      // -------- event --------
+      const onChange = (event) => {
+        // modifier에 input에서 입력된 값을 넣어줌.
+        setAmount(event.target.value);
+      };
+      const reset = () => {
+        setAmount(0);
+      };
+      const onFlip = () => {
+        reset();
+        setInverted((current) => !current);
+      };
+
+      // -------- JSX --------
+      return (
+        <div>
+          <div>
+            <label htmlFor="minutes">Minutes</label>
+            <input
+              value={inverted ? amount * 60 : amount}
+              id="minutes"
+              placeholder="Minutes"
+              type="number"
+              onChange={onChange}
+              disabled={inverted}
+            />
+          </div>
+          <div>
+            <label htmlFor="hours">Hours</label>
+            <input
+              value={inverted ? amount : Math.round(amount / 60)}
+              id="hours"
+              placeholder="Hours"
+              type="number"
+              onChange={onChange}
+              disabled={!inverted}
+            />
+          </div>
+          <button onClick={reset}>Reset</button>
+          <button onClick={onFlip}>{inverted ? "Trun back" : "Flip"}</button>
+        </div>
+      );
+    }
+    function KmToMiles() {
+      // -------- State --------
+      const [amount, setAmount] = React.useState(0);
+      const [inverted, setInverted] = React.useState(false);
+
+      // -------- event --------
+      const onChange = (event) => {
+        // modifier에 input에서 입력된 값을 넣어줌.
+        setAmount(event.target.value);
+      };
+      const reset = () => {
+        setAmount(0);
+      };
+      const onFlip = () => {
+        reset();
+        setInverted((current) => !current);
+      };
+
+      // -------- JSX --------
+      return (
+        <div>
+          <div>
+            <label htmlFor="kilometers">kilometers</label>
+            <input
+              value={inverted ? amount * 1.609 : amount}
+              id="kilometers"
+              placeholder="Kilometers"
+              type="number"
+              onChange={onChange}
+              disabled={inverted === true}
+            />
+          </div>
+          <div>
+            <label htmlFor="miles">miles</label>
+            <input
+              value={inverted ? amount : amount / 1.609}
+              id="miles"
+              placeholder="Miles"
+              type="number"
+              onChange={onChange}
+              disabled={inverted === false}
+            />
+          </div>
+          <button onClick={reset}>Reset</button>
+          <button onClick={onFlip}>{inverted ? "Trun back" : "Flip"}</button>
+        </div>
+      );
+    }
+    // App() 컴포넌트는 JAVA의 메인 클래스 느낌
+    function App() {
+      // -------- State --------
+      const [index, setIndex] = React.useState("xx");
+
+      // -------- event --------
+      const onSelect = (event) => {
+        // User가 만약 Minutes & Hours를 골랐다면 value인 0 반환, else 1를 반환함.
+        setIndex(event.target.value);
+      };
+
+      // -------- JSX --------
+      return (
+        <div>
+          <h1>Super Converter</h1>
+          <select value={index} onChange={onSelect}>
+            <option value="xx">Select your units</option>
+            <option value="0">Minutes & Hours</option>
+            <option value="1">Km & Miles</option>
+          </select>
+
+          {/* 만약 index가 0이다 즉 Minutes & Hours를 골랐다면, MinutesToHours를 호출해줌.
+           */}
+          <hr />
+          {index === "xx" ? "Please select your units" : null}
+          {index === "0" ? <MinutesToHours /> : null}
+          {index === "1" ? <KmToMiles /> : null}
+        </div>
+      );
+    }
+    const root = document.querySelector("#root");
+    // -------- render --------
+    ReactDOM.render(<App />, root);
+  </script>
+</html>
