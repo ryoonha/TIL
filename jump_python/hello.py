@@ -10,9 +10,9 @@ print(a[-2]) # 맨 끝글자 = -1
 # slicing
 print(a[0:4]) 
 
-b = "382Rainy"
-print(b[0:7])
-print(b[7:])
+b = "20221209Rainy"
+print(b[0:8])
+print(b[8:])
 
 c = "123456789"
 print(c[::1])
