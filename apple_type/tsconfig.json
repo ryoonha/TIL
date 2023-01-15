@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+  },
+  "include": ["index.ts"],
+  "exclude": ["node_modules"],
+  "script": {
+    "start": "node index.js",
+    "prestart": "tsc"
+  }
+}
